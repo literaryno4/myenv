@@ -10,7 +10,7 @@ update() {
 }
 
 install_zsh() {
-	if [ -e "/usr/bin/zsh" ]; then
+	if [ ! -e "$HOME/.oh-my-zsh/oh-my-zsh.sh" ]; then
         echo "installing zsh..."
 		sudo apt install zsh;
 		sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -29,7 +29,7 @@ install_zsh() {
 
 install_neovim() {
 	# install
-	if [ $OS = "debian" ]; then
+	if [ $OS = "debian" && ! -e "/usr/bin/nvim" ]; then
 		wget "$nvim_install_url_deb";
 		sudo dpkg -i nvim-linux64.deb;
 		rm nvim-linux64.deb*;
