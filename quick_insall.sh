@@ -9,6 +9,12 @@ update() {
 	sudo apt update && sudo apt upgrade;
 }
 
+intall_dependencies() {
+	# install config dependencies
+	sudo apt install zip npm universal-ctags global ripgrep llvm tmux
+
+}
+
 install_zsh() {
 	if [ ! -e "$HOME/.oh-my-zsh/oh-my-zsh.sh" ]; then
         echo "installing zsh..."
@@ -35,9 +41,6 @@ install_neovim() {
 		rm nvim-linux64.deb*;
 	fi
 
-	# install config dependencies
-	sudo apt install zip npm universal-ctags global ripgrep clang
-
 	# config
 	if [ ! -d "${nvim_config_path}" ]; then
 		echo "install nvim config..."
@@ -50,9 +53,10 @@ install_neovim() {
 
 install_env() {
 	update;
+  intall_dependencies;
 	install_zsh;
 	install_neovim;
-    update;
+  update;
 }
 
 install_env;
