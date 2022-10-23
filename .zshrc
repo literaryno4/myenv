@@ -108,9 +108,9 @@ alias pip3="pip"
 alias lm='ls -al -G'
 alias ls='ls -G'
 alias ta='tmux attach'
+alias tmux='TERM=screen-256color-bce tmux'
 # export NEMU_HOME=/home/chao/ics2020/nemu
 # export AM_HOME=/home/chao/ics2020/abstract-machine
-alias clion="sh /home/chao/Downloads/clion-2022.2.1/bin/clion.sh 2&> /dev/null"
 export NEMU_HOME=/home/chao/ics2022/nemu
 export AM_HOME=/home/chao/ics2022/abstract-machine
 export CPUT=/home/chao/ics2022/am-kernels/tests/cpu-tests
