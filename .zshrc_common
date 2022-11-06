@@ -13,5 +13,4 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 
 # common alias
-source $(pwd)/alias.sh
-
+source $myenv/alias.sh

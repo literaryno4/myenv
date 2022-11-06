@@ -1,5 +1,6 @@
 # common config for all system
-source .zshrc_common
+myenv=~/myenv
+source $myenv/.zshrc_common
 
 # macos only alias
 alias wt='cd ~/Documents/wordtool && java -jar wordtool.jar'
