@@ -1,0 +1,26 @@
+# common config for all system
+source .zshrc_common
+
+# macos only alias
+alias wt='cd ~/Documents/wordtool && java -jar wordtool.jar'
+alias octave='/usr/local/bin/octave'
+alias proxy="export http_proxy=http://localhost:1087;export https_proxy=http://localhost:1087" 
+alias unproxy="unset http_proxy;unset https_proxy"
+alias cdvim="cd ~/.config/nvim/lua/user"
+alias cdpp="cd ~/Documents/lab/graduate_design/paper"
+
+# macos only env var
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
+export PATH="$PATH:/usr/local/smlnj/bin"
+export PATH="$PATH:/usr/local/mysql/bin"
+
+######## on start ########
+proxy
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS="--reverse --preview 'bat --style=numbers --theme=gruvbox-light --line-range :500 {}'"
+export PATH=$PATH:/usr/local/texlive/2022/bin/universal-darwin

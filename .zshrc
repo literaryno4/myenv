@@ -93,22 +93,6 @@ export LANG=en_US.UTF-8
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vim="nvim"
-alias py="python3"
-alias python="python3"
-alias pip3="pip"
-alias lm='ls -al -G'
-alias ls='ls -G'
-alias ta='tmux attach'
-alias tmux='TERM=screen-256color-bce tmux'
 # export NEMU_HOME=/home/chao/ics2020/nemu
 # export AM_HOME=/home/chao/ics2020/abstract-machine
 export NEMU_HOME=/home/chao/ics2022/nemu
