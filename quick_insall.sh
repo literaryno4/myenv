@@ -22,15 +22,9 @@ install_zsh() {
 		sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	fi
 
-	# config
-	rm "~/.zshrc"
-	cp "./.zshrc" ~
-
     # zsh plugins
 	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-	source "~/.zshrc"
 }
 
 install_neovim() {
@@ -51,12 +45,18 @@ install_neovim() {
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 }
 
+link_config() {
+	path=$(pwd)
+	for dotfile in $(cd dotfiles; find . -name '.*' | grep -v .git | grep -v '^.$');
+	do
+		bn=$(basename ${dotfile})
+		ln -sf ${path}/dotfiles/${bn} $HOME/${bn}
+	done
+}
+
 install_env() {
-	update;
-  intall_dependencies;
 	install_zsh;
-	install_neovim;
-  update;
+	link_config;
 }
 
 install_env;
