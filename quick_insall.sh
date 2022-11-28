@@ -29,7 +29,7 @@ install_zsh() {
 
 install_neovim() {
 	# install
-	if [ $OS = "debian" && ! -e "/usr/bin/nvim" ]; then
+	if [ $OS = "debian" ] && [ ! -e "/usr/bin/nvim" ]; then
 		wget "$nvim_install_url_deb";
 		sudo dpkg -i nvim-linux64.deb;
 		rm nvim-linux64.deb*;
@@ -39,7 +39,7 @@ install_neovim() {
 	if [ ! -d "${nvim_config_path}" ]; then
 		echo "install nvim config..."
 		mkdir -p "$nvim_config_path";
-		git clone "$nvim_config_url" $nvim_config_path;
+		git clone -b terminal "$nvim_config_url" $nvim_config_path;
 	fi
 	git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
@@ -56,6 +56,7 @@ link_config() {
 
 install_env() {
 	install_zsh;
+	install_neovim;
 	link_config;
 }
 
