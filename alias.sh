@@ -7,3 +7,4 @@ alias lm='ls -al -G'
 alias ls='ls -G'
 alias cdvim="cd ~/.config/nvim/lua/user"
 alias top='htop'
+#alias tmux="TERM=screen-256color-bce tmux"
