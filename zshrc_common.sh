@@ -1,5 +1,5 @@
 # zsh config
-export ZSH="/Users/chao/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 DEFAULT_USER="chao"
 
@@ -10,7 +10,6 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # environment
-export LANG=en_US.UTF-8
 
 # common alias
 source $myenv/alias.sh
